@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>kya hua h tujhe Gwen darling🕸️?</title> 
+  <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('https://i.imgur.com/H6wKsV9.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 105, 180, 0.9);
+            padding: 30px;
+            box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.7);
+            border-radius: 15px;
+            position: relative;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff1493;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.7);
+        }
+        .yes-btn:hover {
+            background-color: #e60073;
+        }
+        .no-btn {
+            background-color: #ff4d4d;
+            color: white;
+            position: absolute;
+        }
+        img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.7);
+        }
+        .question {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+        }
+        .proposal-question {
+            font-family: 'Great Vibes', cursive;
+            font-size: 26px;
+            font-weight: bold;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <img id="questionImage" src="https://img.eselt.de/img/17555340_OE6KrMQWG6aHUWAg/ad.jpg" alt="Romantic Image"> 
+  <div class="container" id="questionContainer"> 
+   <h1>Chahe meri parchhayi tumhare saath ho ya na ho, bas itna wada karo ki tumhari muskurahat kabhi kam na ho 💖</h1> 
+   <h2 id="question" class="question">Do you believe in soulmates Gwen?</h2> <button class="btn yes-btn" onclick="nextQuestion()">Yes 💕</button> <button class="btn no-btn" id="noBtn" onmouseover="moveButton()">No 😢</button> 
+   <p id="message"></p> 
+  </div> 
+  <script>
+        let questions = [
+            "Do you believe in soulm?",
+            "I know there are memories in your heart that don’t have my name, and that’s okay. I don’t want to erase your past—I just want to be the reason you smile in the present and the love you choose for the future?",
+            "I know your heart still holds echoes of the past, and that hurts more than I can say. But I'm here, loving you in the present, hoping one day you'll see that I'm not just a chapter—you and I can be the whole story?"
+        ];
+        let index = 0;
+        let images = [
+            "https://img.eselt.de/img/17555340_OE6KrMQWG6aHUWAg/ad.jpg", 
+            "https://img.eselt.de/img/17555339_kLDYWIEeZJOMKU14/ad.jpg"
+        ];function nextQuestion() {
+        index++;
+        if (index < questions.length) {
+            document.getElementById("question").innerText = questions[index];
+        } else {
+            askProposal();
+        }
+    }
+
+    function askProposal() {
+        document.getElementById("questionImage").src = images[1];
+        document.getElementById("questionContainer").innerHTML = `
+            <h1>I wanna make you permanent in my life Gwen darling 🫀</h1>
+            <h2 class="proposal-question">would you like to be a mother of my daughter  Gwen ? 💍❤️</h2>
+            <button class="btn yes-btn" onclick="showLove()">Yes! 😍</button>
+            <button class="btn no-btn" id="noBtn" onmouseover="moveButton()">No 😭</button>
+            <p id="message"></p>
+        `;
+    }
+
+    function showLove() {
+        document.getElementById('message').innerHTML = "💖 yessss mai jantha tha tu ha bole ge Gwen baby chalo ab dm mai chummi dedo 🙈 💖";
+    }
+
+    function moveButton() {
+        let noBtn = document.getElementById('noBtn');
+        let x = Math.random() * (window.innerWidth - 100);
+        let y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + 'px';
+        noBtn.style.top = y + 'px';
+    }
+</script> 
+ 
+</body></html>
